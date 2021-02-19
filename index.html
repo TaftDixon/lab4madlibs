@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+        #wrapper { background-color:bisque;
+                    width: 70%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    padding: 2em;}
+        </style>
+
+    </head>
+<body>
+
+<div id = "wrapper">
+<h2>Madlibs</h2>
+<img src = "madlibslogo.png" width="20%" height="auto">
+<p>Please enter the following information:</p>
+
+<input id="pluralNoun" placeholder="a plural noun"><br>
+<input id="noun1" placeholder="a noun"><br>
+<input id="pluralNoun2" placeholder="another plural noun"><br>
+<input id="song" placeholder="song"><br>
+<input id="verb" placeholder="past tense verb"><br>
+
+
+<button id="button">Submit</button>
+
+<p>
+    <span id="storyContent1"></span><br>
+    <span id="storyContent2"></span><br>
+    <span id="storyContent3"></span><br>
+    <span id="storyContent4"></span><br>
+    <span id="storyContent5"></span><br>
+</p>
+
+<button id="againButton">Go Again</button>
+
+
+<script>
+        document.getElementById("againButton").style.visibility = "hidden";
+
+        var madlib = function() {
+            var storyContent1 = document.getElementById("storyContent1");
+            var storyContent2 = document.getElementById("storyContent2");
+            var storyContent3 = document.getElementById("storyContent3");
+            var storyContent4 = document.getElementById("storyContent4");
+            var storyContent5 = document.getElementById("storyContent5");
+
+            var pluralNoun = document.getElementById("pluralNoun").value;
+            var noun1 = document.getElementById("noun1").value;
+            var pluralNoun2 = document.getElementById("pluralNoun2").value;
+            var song = document.getElementById("song").value;
+            var verb = document.getElementById("verb").value;
+
+            storyContent1.innerHTML = "There once was a bunch of " + pluralNoun;
+            storyContent2.innerHTML = "There were so many, they nearly destoryed the town of " + noun1;
+            storyContent3.innerHTML = "But the townspeople overcame them by using " + pluralNoun2;
+            storyContent4.innerHTML = "and then the song " + song + " began to play";
+            storyContent5.innerHTML = "and the townspeople " + verb + " all night long";
+
+            document.getElementById("againButton").style.visibility = "visible";
+        };
+
+        var refresh = function() {
+            document.getElementById("againButton").style.visibility = "hidden";
+            storyContent1.innerHTML = "";
+            storyContent2.innerHTML = "";
+            storyContent3.innerHTML = "";
+            storyContent4.innerHTML = "";
+            storyContent5.innerHTML = "";
+        }
+
+        document.getElementById("button").addEventListener("click", madlib);
+        document.getElementById("againButton").addEventListener("click", refresh);
+        
+</script>
+</div>
+</body>
+</html> 
+
