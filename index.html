@@ -53,11 +53,11 @@
             var song = document.getElementById("song").value;
             var verb = document.getElementById("verb").value;
 
-            storyContent1.innerHTML = "There once was a bunch of " + pluralNoun;
-            storyContent2.innerHTML = "There were so many, they nearly destoryed the town of " + noun1;
-            storyContent3.innerHTML = "But the townspeople overcame them by using " + pluralNoun2;
-            storyContent4.innerHTML = "and then the song " + song + " began to play";
-            storyContent5.innerHTML = "and the townspeople " + verb + " all night long";
+            storyContent1.innerHTML = "There once was a bunch of " + pluralNoun.toLowerCase();
+            storyContent2.innerHTML = "There were so many, they nearly destoryed the town of " + noun1.toLowerCase();
+            storyContent3.innerHTML = "But the townspeople overcame them by using " + pluralNoun2.toLowerCase();
+            storyContent4.innerHTML = "and then the song " + song.toLowerCase() + " began to play";
+            storyContent5.innerHTML = "and the townspeople " + verb.toLowerCase() + " all night long";
 
             document.getElementById("againButton").style.visibility = "visible";
         };
